@@ -43,6 +43,10 @@
 			this.InputFilesListBox.Size = new System.Drawing.Size(271, 238);
 			this.InputFilesListBox.TabIndex = 0;
 			// 
+			// saveFileDialog1
+			// 
+			this.saveFileDialog1.DefaultExt = "pdf";
+			// 
 			// openFileDialog1
 			// 
 			this.openFileDialog1.FileName = "openFileDialog1";
@@ -56,6 +60,7 @@
 			this.SaveButton.TabIndex = 1;
 			this.SaveButton.Text = "Save as...";
 			this.SaveButton.UseVisualStyleBackColor = true;
+			this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
 			// 
 			// AddFilesButton
 			// 
