@@ -41,7 +41,15 @@
 					}
 
 					var page = writer.GetImportedPage(reader, i);
-					contentBytes.AddTemplate(page, 1f, 0, 0, 1f, 0, 0);
+
+					if (reader.GetPageRotation(i) % 180 == 90) // landscape
+					{
+						contentBytes.AddTemplate(page, 0, -1f, 1f, 0, 0, reader.GetPageSizeWithRotation(i).Height);
+					}
+					else
+					{
+						contentBytes.AddTemplate(page, 1f, 0, 0, 1f, 0, 0);
+					}
 				}
 			}
 
