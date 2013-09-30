@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PDF_Handiwork
@@ -15,6 +8,23 @@ namespace PDF_Handiwork
 		public MainForm()
 		{
 			InitializeComponent();
+		}
+
+		private void AddFilesButtonClick(object sender, EventArgs e)
+		{
+			var result = openFileDialog1.ShowDialog();
+
+			if (result == DialogResult.OK)
+			{
+				var names = openFileDialog1.FileNames;
+
+				foreach (var name in names)
+				{
+					var inputFile = new InputFile(name);
+
+					InputFilesListBox.Items.Add(inputFile);
+				}
+			}
 		}
 	}
 }

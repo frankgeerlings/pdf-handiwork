@@ -46,6 +46,7 @@
 			// openFileDialog1
 			// 
 			this.openFileDialog1.FileName = "openFileDialog1";
+			this.openFileDialog1.Multiselect = true;
 			// 
 			// SaveButton
 			// 
@@ -65,8 +66,9 @@
 			this.AddFilesButton.TabIndex = 2;
 			this.AddFilesButton.Text = "&Add files...";
 			this.AddFilesButton.UseVisualStyleBackColor = true;
+			this.AddFilesButton.Click += new System.EventHandler(this.AddFilesButtonClick);
 			// 
-			// Form1
+			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -74,7 +76,7 @@
 			this.Controls.Add(this.AddFilesButton);
 			this.Controls.Add(this.SaveButton);
 			this.Controls.Add(this.InputFilesListBox);
-			this.Name = "Form1";
+			this.Name = "MainForm";
 			this.Text = "PDF Handiwork";
 			this.ResumeLayout(false);
 
