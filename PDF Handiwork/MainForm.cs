@@ -3,6 +3,8 @@ using System.Windows.Forms;
 
 namespace PDF_Handiwork
 {
+	using System.Linq;
+
 	public partial class MainForm : Form
 	{
 		public MainForm()
@@ -33,9 +35,16 @@ namespace PDF_Handiwork
 
 			if (result == DialogResult.OK)
 			{
-				// var targetPath = saveFileDialog1.OpenFile();
+				var pdfMerger = new PdfMerger();
 
-				// TODO: Do something.
+				using (var targetStream = saveFileDialog1.OpenFile())
+				{
+					var items = InputFilesListBox.Items.Cast<InputFile>();
+
+					pdfMerger.MergeIntoStream(items, targetStream);
+
+					targetStream.Close();
+				}
 
 				this.Close();
 			}

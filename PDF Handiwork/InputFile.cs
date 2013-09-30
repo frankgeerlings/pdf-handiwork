@@ -1,6 +1,6 @@
 ﻿namespace PDF_Handiwork
 {
-	internal class InputFile
+	public class InputFile
 	{
 		private readonly string safeName;
 
